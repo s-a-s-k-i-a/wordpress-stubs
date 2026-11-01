@@ -144,6 +144,7 @@ return [
     'get_tags' => ["(\$args is array{fields: 'count', ...} ? numeric-string : (\$args is array{fields: 'names'|'slugs', ...} ? list<string> : (\$args is array{fields: 'id=>name'|'id=>slug', ...} ? array<int, string> : (\$args is array{fields: 'id=>parent', ...} ? array<int, int> : (\$args is array{fields: 'ids'|'tt_ids', ...} ? list<int> : array<int, \WP_Term>)))))|\WP_Error"],
     'get_taxonomies' => ["(\$output is 'names' ? array<string, string> : array<string, \WP_Taxonomy>)"],
     'get_taxonomies_for_attachments' => ["(\$output is 'names' ? array<int, string> : array<string, \WP_Taxonomy>)"],
+    'get_temp_dir' => ['non-falsy-string'],
     'get_term' => ["(\$output is 'ARRAY_A' ? array<string, string|int>|\WP_Error|null : (\$output is 'ARRAY_N' ? list<string|int>|\WP_Error|null : \WP_Term|\WP_Error|null))", 'output' => "'OBJECT'|'ARRAY_A'|'ARRAY_N'"],
     'get_term_by' => ["false|(\$output is 'ARRAY_A' ? array<string, string|int> : (\$output is 'ARRAY_N' ? list<string|int> : \WP_Term))"],
     'get_terms' => ["(\$args is array{fields: 'count', ...} ? 0|numeric-string : (\$args is array{fields: 'names'|'slugs', ...} ? list<string> : (\$args is array{fields: 'id=>name'|'id=>slug', ...} ? array<int, string> : (\$args is array{fields: 'id=>parent', ...} ? array<int, int> : (\$args is array{fields: 'ids'|'tt_ids', ...} ? list<int> : array<int, \WP_Term>)))))|\WP_Error", 'deprecated' => "''"],

@@ -132720,6 +132720,7 @@ namespace {
      * @since 2.5.0
      *
      * @return string Writable temporary directory.
+     * @phpstan-return non-falsy-string
      */
     function get_temp_dir()
     {
