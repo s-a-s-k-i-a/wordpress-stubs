@@ -336,6 +336,7 @@ return [
     'wp_update_post' => ['($wp_error is false ? int<0, max> : int<1, max>|\WP_Error)'],
     'wp_upload_bits' => [null, 'name' => 'non-empty-string', 'deprecated' => 'null'],
     'wp_upload_dir' => ['array{path: string, url: string, subdir: string, basedir: string, baseurl: string, error: false|string}'],
+    'wp_validate_boolean' => ["(T is bool ? T : (T is ''|'false'|'FALSE'|'0'|0|null|array{} ? false : (T is int|lowercase-string|uppercase-string|non-empty-array ? true : bool)))", '@phpstan-template T' => '', 'value' => 'T', '@phpstan-pure' => ''],
     'wp_verify_nonce' => ['1|2|false', 'action' => '-1|string'],
     'wp_widget_rss_form' => ['void', 'args' => $wpWidgetRssFormArgsType, 'inputs' => $wpWidgetRssFormInputsType],
     'wp_widget_rss_process' => ['array{title: string, url: string, link: string, items: int<1, 20>, error: string|false, show_summary: int, show_author: int, show_date: int}'],

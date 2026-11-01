@@ -134809,6 +134809,10 @@ namespace {
      *
      * @param mixed $value Boolean value to validate.
      * @return bool Whether the value is validated.
+     * @phpstan-template T
+     * @phpstan-param T $value
+     * @phpstan-pure
+     * @phpstan-return (T is bool ? T : (T is ''|'false'|'FALSE'|'0'|0|null|array{} ? false : (T is int|lowercase-string|uppercase-string|non-empty-array ? true : bool)))
      */
     function wp_validate_boolean($value)
     {
