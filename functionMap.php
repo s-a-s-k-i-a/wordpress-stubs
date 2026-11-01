@@ -114,6 +114,7 @@ return [
     'get_categories' => ["(\$args is array{fields: 'count', ...} ? list<numeric-string> : (\$args is array{fields: 'names'|'slugs', ...} ? list<string> : (\$args is array{fields: 'id=>name'|'id=>slug', ...} ? array<int, string> : (\$args is array{fields: 'id=>parent', ...} ? array<int, int> : (\$args is array{fields: 'ids'|'tt_ids', ...} ? list<int> : array<int, \WP_Term>)))))", 'args' => 'array{taxonomy?:string,...}'],
     'get_category' => ["(\$category is object ? array<array-key, mixed>|\WP_Term : array<array-key, mixed>|\WP_Term|\WP_Error|null) & (\$output is 'ARRAY_A' ? array<string, mixed>|\WP_Error|null : (\$output is 'ARRAY_N' ? array<int, mixed>|\WP_Error|null : \WP_Term|\WP_Error|null))", 'output' => "'OBJECT'|'ARRAY_A'|'ARRAY_N'"],
     'get_category_by_path' => ["(\$output is 'ARRAY_A' ? array<string, mixed>|\WP_Error|null : (\$output is 'ARRAY_N' ? array<int, mixed>|\WP_Error|null : \WP_Term|\WP_Error|null))", 'output' => "'OBJECT'|'ARRAY_A'|'ARRAY_N'"],
+    'get_comment_statuses' => ['array{hold: string, approve: string, spam: string, trash: string}'],
     'get_comments_pagination_arrow' => ['non-falsy-string|null'],
     'get_compat_media_markup' => ['array{item: string, meta: string}'],
     'get_current_blog_id' => ['int<0, max>'],

@@ -122407,6 +122407,7 @@ namespace {
      * @since 2.7.0
      *
      * @return string[] List of comment status labels keyed by status.
+     * @phpstan-return array{hold: string, approve: string, spam: string, trash: string}
      */
     function get_comment_statuses()
     {
