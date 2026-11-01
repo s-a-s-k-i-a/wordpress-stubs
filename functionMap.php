@@ -128,6 +128,7 @@ return [
     'get_permalink' => ['($post is \WP_Post ? string : string|false)'],
     'get_post_permalink' => ['($post is \WP_Post ? string : string|false)'],
     'get_post_stati' => ["(\$output is 'names' ? array<string, string> : array<string, \stdClass>)"],
+    'get_post_statuses' => ['array{draft: string, pending: string, private: string, publish: string}'],
     'get_post_types' => ["(\$output is 'names' ? array<string, string> : array<string, \WP_Post_Type>)"],
     'get_posts' => ["(\$args is array{fields: 'id=>parent'|'ids', ...} ? array<int, int> : array<int, \WP_Post>)"],
     'get_plugin_page_hookname' => ['non-falsy-string'],

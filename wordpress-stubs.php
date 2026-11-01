@@ -153087,6 +153087,7 @@ namespace {
      * @since 2.5.0
      *
      * @return string[] Array of post status labels keyed by their status.
+     * @phpstan-return array{draft: string, pending: string, private: string, publish: string}
      */
     function get_post_statuses()
     {
