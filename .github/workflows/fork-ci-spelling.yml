@@ -1,0 +1,24 @@
+# Fork-only copy for CI before the upstream PR.
+name: Spelling
+
+on:
+  push:
+    branches:
+    - master
+  pull_request: null
+  workflow_dispatch: null
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typos_check:
+    name: Typos
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+
+    - name: Check spelling
+      uses: crate-ci/typos@main
