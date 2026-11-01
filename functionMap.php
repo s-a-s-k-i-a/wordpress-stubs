@@ -199,7 +199,7 @@ return [
     'render_block_core_site_logo' => ['non-falsy-string'],
     'render_block_core_widget_group' => ['non-falsy-string'],
     'rest_authorization_required_code' => ['401|403'],
-    'rest_sanitize_boolean' => ["(T is bool ? T : (T is ''|'false'|'FALSE'|'0'|0 ? false : true))", '@phpstan-template T' => 'of bool|string|int', 'value' => 'T', '@phpstan-pure' => ''],
+    'rest_sanitize_boolean' => ["(T is bool ? T : (T is ''|'false'|'FALSE'|'0'|0 ? false : (T is int|lowercase-string|uppercase-string ? true : bool)))", '@phpstan-template T' => 'of bool|string|int', 'value' => 'T', '@phpstan-pure' => ''],
     'rest_ensure_response' => ['($response is \WP_Error ? \WP_Error : \WP_REST_Response)'],
     'safecss_filter_attr' => [null, 'deprecated' => "''"],
     'sanitize_bookmark_field' => ['array<int, int>|int|string', 'field' => "'link_id'|'link_url'|'link_name'|'link_image'|'link_target'|'link_description'|'link_visible'|'link_owner'|'link_rating'|'link_updated'|'link_rel'|'link_notes'|'link_rss'|'link_category'"],

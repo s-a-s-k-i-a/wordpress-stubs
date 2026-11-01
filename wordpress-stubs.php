@@ -157513,7 +157513,7 @@ namespace {
      * @phpstan-template T of bool|string|int
      * @phpstan-param T $value
      * @phpstan-pure
-     * @phpstan-return (T is bool ? T : (T is ''|'false'|'FALSE'|'0'|0 ? false : true))
+     * @phpstan-return (T is bool ? T : (T is ''|'false'|'FALSE'|'0'|0 ? false : (T is int|lowercase-string|uppercase-string ? true : bool)))
      */
     function rest_sanitize_boolean($value)
     {
